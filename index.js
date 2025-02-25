@@ -16,7 +16,7 @@ const QRCode = require("qrcode");
 
 const pool = new Pool({
     user: 'postgres',
-    connectionString: process.env.DATABASE_URL,
+
     host: process.env.DB_HOST,
     database: process.env.DB_NAME,
     password: process.env.DB_PASSWORD,
@@ -26,7 +26,9 @@ const pool = new Pool({
 
 
 app.use(cors({
-  origin: 'http://localhost:5173', 
+  origin: "http://localhost:5173", // Allow frontend
+  credentials: true, // If using cookies or authentication
+  methods: ["GET", "POST", "PUT", "DELETE"]
 }));
 
 
