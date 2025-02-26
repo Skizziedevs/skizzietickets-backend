@@ -26,11 +26,8 @@ const pool = new Pool({
 
 
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://campusly-ng.netlify.app"
-  ],
-  credentials: true, // If using cookies or authentication
+  origin: "https://campusly-ng.netlify.app",
+   credentials: true, // If using cookies or authentication
   methods: ["GET", "POST", "PUT", "DELETE"]
 }));
 
